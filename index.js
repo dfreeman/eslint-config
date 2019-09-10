@@ -6,10 +6,12 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   rules: {
-    '@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }]
+    'prefer-const': 'off',
+    '@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }],
+    '@typescript-eslint/no-use-before-define': 'off',
   },
   overrides: [
     {
@@ -20,7 +22,15 @@ module.exports = {
           return rules;
         },
         {}
-      )
-    }
-  ]
+      ),
+    },
+    {
+      // Typical project config files
+      files: ['.*.js', '*.config.js'],
+      env: {
+        node: true,
+        browser: false,
+      },
+    },
+  ],
 };
