@@ -24,6 +24,7 @@ module.exports = {
         '@typescript-eslint/no-use-before-define': 'off',
         '@typescript-eslint/array-type': ['error', { default: 'generic' }],
         '@typescript-eslint/explicit-member-accessibility': 'error',
+        '@typescript-eslint/ban-ts-comment': 'off',
       },
     },
     {
